@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <title>Filtered Data</title>
+<head>
+  
+ <style>
+  h1{
+    color:#ddd;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: dimgray;
+  }
+  th, td {
+    padding: auto;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 12pt;
+    color:black;
+  }
+  th {
+    background-color: darkred;
+    padding: auto;
+  }
+  img {
+    height: 80%;
+    width: 80%;
+  }
+  body{
+    background-color: black;
+  }
+  h2{
+    color: #ddd;
+  }
+  </style>
+</head>
+<body>
+  <h1>Filtered Data</h1>
+  <h2>Number of records with data in "class" field are : {{classrecords}}</h2>
+  {{#if invoices.length}}
+    <table>
+      <thead>
+        <tr>
+          <th>Invoice ID</th>
+          <th>Manufacturer</th>
+          <th>Class</th>
+          <th>Sales (in thousands)</th>
+        <th>Year Resale Value</th>
+        <th>Vehicle Type</th>
+        <th>Price (in thousands)</th>
+        <th>Engine Size</th>
+        <th>Horsepower</th>
+        <th>Wheelbase</th>
+        <th>Width</th>
+        <th>Length</th>
+        <th>Curb Weight</th>
+        <th>Fuel Capacity</th>
+        <th>Fuel Efficiency</th>
+        <th>Latest Launch</th>
+        <th>Power Perf Factor</th>
+        <th>Image</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {{#each invoices}}
+          <tr>
+            <td>{{this.InvoiceNo}}</td>
+            <td>{{this.Manufacturer}}</td>
+            <td>{{this.class}}</td>
+            <td>{{this.Sales_in_thousands}}</td>
+        <td>{{this.__year_resale_value}}</td>
+        <td>{{this.Vehicle_type}}</td>
+        <td>{{this.Price_in_thousands}}</td>
+        <td>{{this.Engine_size}}</td>
+        <td>{{this.Horsepower}}</td>
+        <td>{{this.Wheelbase}}</td>
+        <td>{{this.Width}}</td>
+        <td>{{this.Length}}</td>
+        <td>{{this.Curb_weight}}</td>
+        <td>{{this.Fuel_capacity}}</td>
+        <td>{{this.Fuel_efficiency}}</td>
+        <td>{{this.Latest_Launch}}</td>
+        <td>{{this.Power_perf_factor}}</td>
+        <td><img src="{{this.image}}" alt="Images"></td>
+            
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{else}}
+    <p>No records with a "Class" field found.</p>
+  {{/if}}
+</body>
+</html>

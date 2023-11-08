@@ -1,0 +1,20 @@
+ table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: dimgray;
+  }
+  th, td {
+    padding: auto;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 12pt;
+    color:black;
+  }
+  th {
+    background-color: darkred;
+    padding: auto;
+  }
+  img {
+    height: 80%;
+    width: 80%;
+  }
